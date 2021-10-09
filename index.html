@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@3.5.1/dist/chart.min.js"></script>
+    <link rel="stylesheet" href="./styles/style.css">
+</head>
+
+<body>
+    <h1 class="title">covid 19 Statistics</h1>
+    <div class="chartContainer">
+        <canvas id="mychart"></canvas>
+    </div>
+    <div class="buttonContainer">
+        <div class="cases-btns">
+            <input class="btn btn-case" type="button" value="Confirmed">
+            <input class="btn btn-case" type="button" value="Deaths">
+            <input class="btn btn-case" type="button" value="Recovered">
+            <input class="btn btn-case" type="button" value="Critical">
+        </div>
+
+        <div class="region-btns">
+            <input class="btn btn-region" type="button" value="Asia">
+            <input class="btn btn-region" type="button" value="Europe">
+            <input class="btn btn-region" type="button" value="Africa">
+            <input class="btn btn-region" type="button" value="Americas">
+            <input class="btn btn-region" type="button" value="World">
+        </div>
+    </div>
+
+    <div class="countryData">
+        Select Country:
+        <span id="select-input">
+            <select id="selection"></select>
+        </span>
+    </div>
+    <div class="displayInfo">
+        <div class="data data1"></div>
+        <div class="data data2"></div>
+        <div class="data data3"></div>
+        <div class="data data4"></div>
+        <div class="data data5"></div>
+        <div class="data data6"></div>
+    </div>
+    <script src="./scripts/script.js"></script>
+</body>
+
+</html>
