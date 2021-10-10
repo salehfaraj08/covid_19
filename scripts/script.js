@@ -21,8 +21,6 @@ const regionBtns = document.querySelectorAll('.btn-region'),
     display6 = document.querySelector('.data6');
 /** initializing the data on local storage and the arrays **/
 const getWorld = (async () => {
-    // localStorage.clear();
-    // console.log(localStorage);
     let dataCountries = {},
         coronaData = {};
     if (!localStorage.getItem('world') || !localStorage.getItem('cases')) {
@@ -36,8 +34,7 @@ const getWorld = (async () => {
     dataCountries.map(val1 => {
         worldCorona[val1.cca2] = { name: val1.name.common, region: val1.region }
     })
-    console.log(coronaData);
-    coronaData.map(val1 => {
+    coronaData.forEach(val1 => {
         worldCorona[val1.code]['confirmed'] = val1.latest_data.confirmed;
         worldCorona[val1.code]['critical'] = val1.latest_data.critical;
         worldCorona[val1.code]['deaths'] = val1.latest_data.deaths;
@@ -46,7 +43,6 @@ const getWorld = (async () => {
         worldCorona[val1.code]['newDeaths'] = val1.today.deaths;
     })
     worldCorona = Object.values(worldCorona);
-    console.log(worldCorona);
     worldCorona = worldCorona.filter(val => {
         return val.region.length > 0 && val.confirmed >= 0;
     })
@@ -62,7 +58,7 @@ const getWorld = (async () => {
     americas = worldCorona.filter(val => {
         return val.region === 'Americas';
     })
-    console.log(worldCorona);
+    updateChart(worldCorona);
 })
 
 getWorld();
@@ -71,17 +67,15 @@ getWorld();
 function updateChart(array, type) {
     let keys = [], values = [], type1 = 'confirmed';
     if (type1 !== type && type !== undefined) {
-        type1 = type
+        type1 = type;
     }
-    console.log(type1);
     array.map(value => {
         keys.push(value.name);
         values = [...values, value[type1]];
     })
-    // console.log(keys, values);
     setChart(keys, values, type1)
 }
-updateChart(worldCorona);
+
 
 /**function that setting a new chart**/
 function setChart(keys, values, type) {

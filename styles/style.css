@@ -81,15 +81,6 @@ input[type=button] {
 }
 
 @media(max-width: 920px) {
-    .chartContainer {
-        width: 80vw;
-        height: 40vh;
-    }
-    .contain {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-    }
     .cases-btns {
         flex-direction: column;
     }
@@ -110,9 +101,6 @@ input[type=button] {
 }
 
 @media(max-width: 600px) {
-    .chartContainer {
-        width: 70vw;
-    }
     input[type=button] {
         width: 23vw;
     }
