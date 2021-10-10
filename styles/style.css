@@ -39,8 +39,6 @@ body {
     gap: 2vmin;
 }
 
-
-
 input[type=button] {
     background: transparent;
     border: 1px solid white;
@@ -53,8 +51,6 @@ input[type=button] {
     background: rgba(0, 0, 0, 0.8);
     color: white;
 }
-
-
 
 .countryData {
     display: flex;
@@ -86,8 +82,13 @@ input[type=button] {
 
 @media(max-width: 920px) {
     .chartContainer {
-        width: 50vw;
+        width: 80vw;
         height: 40vh;
+    }
+    .contain {
+        display: flex;
+        justify-content: center;
+        align-items: center;
     }
     .cases-btns {
         flex-direction: column;
@@ -101,6 +102,12 @@ input[type=button] {
     .buttonContainer {
         display: flex;
         flex-direction: row;
-        gap : 2rem;
+        gap: 2rem;
+    }
+}
+
+@media(max-width: 600px) {
+    .chartContainer {
+        width: 70vw;
     }
 }
