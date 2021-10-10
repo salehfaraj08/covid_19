@@ -61,7 +61,7 @@ input[type=button] {
 }
 
 #selection {
-    width: fit-content;
+    width: 10vw;
 }
 
 .displayInfo {
@@ -104,10 +104,19 @@ input[type=button] {
         flex-direction: row;
         gap: 2rem;
     }
+    #selection {
+        width: 15vw;
+    }
 }
 
 @media(max-width: 600px) {
     .chartContainer {
         width: 70vw;
+    }
+    input[type=button] {
+        width: 23vw;
+    }
+    #selection {
+        width: 35vw;
     }
 }
